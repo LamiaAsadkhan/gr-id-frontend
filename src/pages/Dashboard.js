@@ -1,11 +1,8 @@
-// ===============================
-// src/pages/Dashboard.js
-// ===============================
-
 import Navbar from "../Components/Navbar";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import riceDetails from "../constants/RiceDetails";
+import { BASE_URL } from "../config";
 
 function Dashboard() {
   const [image, setImage] = useState(null);
@@ -39,7 +36,7 @@ function Dashboard() {
     setResult(null);
 
     try {
-      const res = await fetch("https://lamiaasadkhan-gr-id-backend.hf.space/predict", {
+      const res = await fetch(`${BASE_URL}/predict`, {
         method: "POST",
         body: formData,
       });
@@ -149,7 +146,7 @@ function Dashboard() {
             </h2>
 
             <img
-              src={`https://lamiaasadkhan-gr-id-backend.hf.space/uploads/${result.image}`}
+              src={`${BASE_URL}/uploads/${result.image}`}
               width="100%"
               alt="result"
               style={{ borderRadius: "15px", marginTop: "10px" }}
