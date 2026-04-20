@@ -82,7 +82,7 @@ function Dashboard() {
         }}
       >
         <h1> GR-ID Dashboard</h1>
-        <p>Upload rice image and get AI classification</p>
+        <p>Upload rice image and get instant classification</p>
 
         <div
           style={{
@@ -125,7 +125,7 @@ function Dashboard() {
 
         {loading && (
           <p style={{ marginTop: "20px", fontWeight: "bold" }}>
-            🤖 AI is analyzing your image...
+            Processing
           </p>
         )}
 
