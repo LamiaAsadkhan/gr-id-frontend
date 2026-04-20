@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Navbar from "../Components/Navbar";
+import { BASE_URL } from "../config";
 
 function History() {
   const [history, setHistory] = useState([]);
@@ -8,10 +9,7 @@ function History() {
   useEffect(() => {
     const fetchHistory = async () => {
       try {
-        const res = await fetch(
-          `https://lamiaasadkhan-gr-id-backend.hf.space/history/${user_id}`
-        );
-
+        const res = await fetch(`${BASE_URL}/history/${user_id}`);
         const data = await res.json();
         setHistory(data);
       } catch (err) {
@@ -50,7 +48,7 @@ function History() {
               marginTop: "30px",
             }}
           >
-            {history.map((item) => {
+            {history.map((item, index) => {
               const label =
                 item.label && typeof item.label === "string"
                   ? item.label.replace("_", " ")
@@ -58,7 +56,7 @@ function History() {
 
               return (
                 <div
-                  key={item.id}
+                  key={index}
                   style={{
                     background: "white",
                     padding: "20px",
@@ -68,7 +66,7 @@ function History() {
                   }}
                 >
                   <img
-                    src={`https://lamiaasadkhan-gr-id-backend.hf.space/uploads/${item.image_path}`}
+                    src={`${BASE_URL}/uploads/${item.image_path}`}
                     alt="history"
                     style={{
                       width: "100%",
@@ -81,8 +79,7 @@ function History() {
                   </h3>
 
                   <p>
-                    🎯 Confidence:{" "}
-                    {(item.confidence * 100).toFixed(2)}%
+                    🎯 Confidence: {(item.confidence * 100).toFixed(2)}%
                   </p>
 
                   <p style={{ fontSize: "12px", color: "gray" }}>
