@@ -119,7 +119,7 @@ function Dashboard() {
               cursor: "pointer",
             }}
           >
-            🚀 Upload & Predict
+             Upload & Predict
           </button>
         </div>
 
@@ -142,7 +142,7 @@ function Dashboard() {
             }}
           >
             <h2 style={{ color: "#2e7d32" }}>
-              🌾 {bestRice.label.replace("_", " ").toUpperCase()}
+               {bestRice.label.replace("_", " ").toUpperCase()}
             </h2>
 
             <img
@@ -153,7 +153,7 @@ function Dashboard() {
             />
 
             <p style={{ marginTop: "15px", fontSize: "18px" }}>
-              🎯 Confidence: {(bestRice.confidence * 100).toFixed(2)}%
+               Confidence: {(bestRice.confidence * 100).toFixed(2)}%
             </p>
 
             {riceInfo && (
