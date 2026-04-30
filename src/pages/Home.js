@@ -38,7 +38,7 @@ function Home() {
           </p>
 
           <button onClick={() => navigate("/signup")}>
-            Get Started 🚀
+            Get Started 
           </button>
         </div>
       </div>
